@@ -1,0 +1,225 @@
+/* ============================================================
+   LoveFlix — Tela de Login (login.html)
+   ============================================================ */
+
+/* --- Layout base --- */
+.login-page {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* --- Fundo com blur suave --- */
+.login-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.login-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: blur(4px) brightness(0.35);
+  transform: scale(1.05); /* evita bordas brancas do blur */
+}
+
+/* --- Logo LoveFlix no topo --- */
+.login-logo {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--red);
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px rgba(229,9,20,0.45);
+}
+
+/* --- Card de login --- */
+.login-card {
+  position: relative;
+  z-index: 2;
+  width: min(400px, calc(100vw - 32px));
+  background: rgba(0, 0, 0, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 40px 32px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 16px 64px rgba(0,0,0,0.7);
+
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.5s ease forwards 0.1s;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Header do card --- */
+.login-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.login-couple-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--red);
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.login-couple-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-card-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+}
+
+.login-card-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* --- Formulário --- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.login-input-wrapper {
+  position: relative;
+}
+
+.login-input {
+  width: 100%;
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 14px 16px;
+  letter-spacing: 3px;
+  text-align: center;
+  transition: border-color var(--transition);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.login-input::placeholder {
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.login-input:focus {
+  border-color: #666;
+}
+
+.login-input.error {
+  border-color: var(--red);
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX(8px); }
+  60%       { transform: translateX(-6px); }
+  80%       { transform: translateX(6px); }
+}
+
+/* --- Mensagem de erro --- */
+.login-error {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--red);
+  font-weight: 500;
+}
+
+.login-error.visible {
+  display: flex;
+}
+
+/* --- Botão de entrar --- */
+.login-btn {
+  width: 100%;
+  background: var(--red);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.5px;
+  transition: background var(--transition), transform var(--transition);
+  margin-top: 4px;
+}
+
+.login-btn:hover {
+  background: var(--red-hover);
+  transform: translateY(-1px);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* --- Hint de ajuda --- */
+.login-hint {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* --- Animação de saída (sucesso) --- */
+.login-page.success-exit {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+/* --- Desktop --- */
+@media (min-width: 768px) {
+  .login-card {
+    padding: 48px 40px 56px;
+  }
+}

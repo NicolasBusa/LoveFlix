@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="LoveFlix — Sua história de amor">
+  <meta name="theme-color" content="#141414">
+  <meta property="og:title" content="LoveFlix">
+  <meta property="og:description" content="LoveFlix — Sua história de amor">
+  <meta property="og:image" content="https://loveflix.digital/og-image.jpg">
+  <meta property="og:type" content="website">
+  <title>LoveFlix</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+  <header class="lf-header" id="lf-header">
+    <span class="lf-logo" aria-label="LoveFlix">LOVEFLIX</span>
+    <div class="lf-header-actions">
+      <span class="lf-time-badge" id="lf-time-badge" aria-live="polite"></span>
+      <button class="lf-signout-btn" id="lf-signout-btn" type="button" aria-label="Sair">
+        Sair
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="lf-hero" aria-label="Destaque do casal">
+      <img
+        class="lf-hero-img"
+        id="lf-hero-img"
+        src=""
+        alt="Foto em destaque do casal"
+        fetchpriority="high"
+      >
+      <div class="lf-hero-overlay" aria-hidden="true"></div>
+
+      <div class="lf-hero-content">
+        <!-- Badge row -->
+        <div class="lf-hero-badge-row" id="lf-hero-badge-row" aria-label="Conquistas"></div>
+
+        <!-- Data do relacionamento -->
+        <p class="lf-hero-together" id="lf-hero-together"></p>
+
+        <!-- Título do casal -->
+        <h1 class="lf-hero-title" id="lf-hero-title"></h1>
+
+        <!-- Bio -->
+        <p class="lf-hero-bio" id="lf-hero-bio"></p>
+
+        <!-- Ações -->
+        <div class="lf-hero-actions">
+          <button id="lf-cinema-open-btn" class="lf-btn-primary" type="button" aria-label="Abrir modo cinema — Ver nossa história">
+            🎬 &nbsp;Ver Nossa História
+          </button>
+
+          <!-- Botão Compartilhar + menu dropdown -->
+          <div class="lf-share-wrapper" id="lf-share-wrapper">
+            <button class="lf-btn-secondary" id="lf-share-btn" type="button"
+              aria-label="Compartilhar" aria-haspopup="menu" aria-expanded="false">
+              ↗ Compartilhar
+            </button>
+
+            <div class="lf-share-menu" id="lf-share-menu" role="menu" aria-hidden="true">
+              <!-- Opção 1: QR code + link -->
+              <button class="lf-share-option" id="lf-share-qr-btn" type="button" role="menuitem">
+                <span class="lf-share-opt-icon" aria-hidden="true">🔗</span>
+                <div>
+                  <div class="lf-share-opt-label">Enviar para o casal</div>
+                  <div class="lf-share-opt-sub">QR code + link de acesso</div>
+                </div>
+              </button>
+              <!-- Opção 2: Compartilhar no Stories -->
+              <button class="lf-share-option" id="lf-share-stories-btn" type="button" role="menuitem">
+                <span class="lf-share-opt-icon" aria-hidden="true">📸</span>
+                <div>
+                  <div class="lf-share-opt-label" id="lf-stories-label">Compartilhar nos Stories</div>
+                  <div class="lf-share-opt-sub">Gera imagem 9:16 para o Instagram</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ ABAS DE NAVEGAÇÃO ════════════════ -->
+    <div class="lf-tabs-wrapper" id="lf-tabs-wrapper">
+      <nav class="lf-tabs" role="tablist" aria-label="Seções do casal">
+        <button class="lf-tab active" role="tab" data-tab="historia"
+          aria-selected="true"  aria-controls="panel-historia"  id="tab-historia">
+          História
+        </button>
+        <button class="lf-tab" role="tab" data-tab="momentos"
+          aria-selected="false" aria-controls="panel-momentos"  id="tab-momentos">
+          Momentos
+        </button>
+        <button class="lf-tab" role="tab" data-tab="abracos"
+          aria-selected="false" aria-controls="panel-abracos"   id="tab-abracos">
+          Abraços e Beijos
+        </button>
+        <button class="lf-tab" role="tab" data-tab="cartas"
+          aria-selected="false" aria-controls="panel-cartas"    id="tab-cartas">
+          Cartas de Amor
+        </button>
+        <button class="lf-tab" role="tab" data-tab="detalhes"
+          aria-selected="false" aria-controls="panel-detalhes"  id="tab-detalhes">
+          Detalhes
+        </button>
+      </nav>
+    </div>
+
+    <!-- ═══════════════════ PAINÉIS DAS ABAS ════════════════ -->
+    <div class="lf-tab-panels">
+
+      <div class="lf-tab-panel active" id="panel-historia"
+           role="tabpanel" aria-labelledby="tab-historia">
+        <p class="lf-tab-text"></p>
+      </div>
+
+      <div class="lf-tab-panel" id="panel-momentos"
+           role="tabpanel" aria-labelledby="tab-momentos">
+        <p class="lf-tab-text"></p>
+      </div>
+
+      <div class="lf-tab-panel" id="panel-abracos"
+           role="tabpanel" aria-labelledby="tab-abracos">
+        <p class="lf-tab-text"></p>
+      </div>
+
+      <div class="lf-tab-panel" id="panel-cartas"
+           role="tabpanel" aria-labelledby="tab-cartas">
+        <p class="lf-tab-text"></p>
+      </div>
+
+      <div class="lf-tab-panel" id="panel-detalhes"
+           role="tabpanel" aria-labelledby="tab-detalhes">
+        <div class="lf-details-list" id="lf-details-list"></div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════ SEÇÃO: EM ALTA ═══════════════════ -->
+    <section class="lf-section" aria-label="Em Alta">
+      <h2 class="lf-section-title">Em Alta</h2>
+      <div class="lf-row-wrapper">
+        <button class="lf-scroll-btn lf-scroll-left" aria-label="Rolar para esquerda" tabindex="-1">❮</button>
+        <div class="lf-row" id="lf-row-hot" role="list" aria-label="Momentos em alta"></div>
+        <button class="lf-scroll-btn lf-scroll-right" aria-label="Rolar para direita" tabindex="-1">❯</button>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ SEÇÃO: MELHORES MOMENTOS ═════════ -->
+    <section class="lf-section" aria-label="Melhores Momentos">
+      <h2 class="lf-section-title">Melhores Momentos</h2>
+      <div class="lf-row-wrapper">
+        <button class="lf-scroll-btn lf-scroll-left" aria-label="Rolar para esquerda" tabindex="-1">❮</button>
+        <div class="lf-row" id="lf-row-moments" role="list" aria-label="Galeria de momentos"></div>
+        <button class="lf-scroll-btn lf-scroll-right" aria-label="Rolar para direita" tabindex="-1">❯</button>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ SEÇÃO: NOSSA LINHA DO TEMPO ═══════ -->
+    <section class="lf-section" aria-label="Nossa Linha do Tempo">
+      <h2 class="lf-section-title">Nossa Linha do Tempo</h2>
+      <div class="lf-row-wrapper">
+        <button class="lf-scroll-btn lf-scroll-left" aria-label="Rolar para esquerda" tabindex="-1">❮</button>
+        <div class="lf-row lf-row--timeline" id="lf-row-timeline" role="list" aria-label="Marcos do relacionamento"></div>
+        <button class="lf-scroll-btn lf-scroll-right" aria-label="Rolar para direita" tabindex="-1">❯</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════ LIGHTBOX ═════════════════════════ -->
+  <div class="lf-lightbox" id="lf-lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+    <button class="lf-lightbox-close" id="lf-lightbox-close" aria-label="Fechar foto">✕</button>
+    <img class="lf-lightbox-img" id="lf-lightbox-img" src="" alt="Foto ampliada">
+  </div>
+
+  <!-- ═══════════════════ MODAL: COMPARTILHAR (QR) ════════════ -->
+  <div class="lf-qr-modal" id="lf-qr-modal" role="dialog" aria-modal="true" aria-label="Link de acesso">
+    <div class="lf-qr-modal-card">
+      <button class="lf-qr-modal-close" id="lf-qr-modal-close" type="button" aria-label="Fechar">✕</button>
+      <div class="lf-qr-modal-heart" aria-hidden="true">❤️</div>
+      <h2 class="lf-qr-modal-title">
+        Envie para <span id="lf-qr-partner-name"></span>
+      </h2>
+      <p class="lf-qr-modal-sub">Escaneie o QR code ou copie o link</p>
+      <img class="lf-qr-modal-img" id="lf-qr-modal-qr" src="" alt="QR Code de acesso" width="180" height="180">
+      <div class="lf-qr-modal-url" id="lf-qr-modal-url"></div>
+      <button class="lf-qr-modal-copy" id="lf-qr-modal-copy" type="button">
+        📋 Copiar Link
+      </button>
+      <p class="lf-qr-modal-hint">
+        🔒 Só quem sabe a data secreta consegue entrar
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ MODO CINEMA ════════════════════════ -->
+  <div class="lf-cinema" id="lf-cinema" role="dialog" aria-modal="true" aria-label="Modo Cinema">
+
+    <!-- Tela de início -->
+    <div class="lf-cinema-start" id="lf-cinema-start">
+      <div class="lf-cinema-start-bg" id="lf-cinema-start-bg" aria-hidden="true"></div>
+      <div class="lf-cinema-start-content">
+        <div class="lf-cinema-start-icon" aria-hidden="true">🎬</div>
+        <h2>Nossa História em Cinema</h2>
+        <p>Reviva os melhores momentos juntos em tela cheia</p>
+        <button class="lf-cinema-start-btn" id="lf-cinema-start-btn" type="button">
+          ▶&nbsp;&nbsp;Iniciar
+        </button>
+        <p class="lf-cinema-music-hint" id="lf-cinema-music-hint"></p>
+      </div>
+    </div>
+
+    <!-- Container de slides -->
+    <div class="lf-cinema-slides" id="lf-cinema-slides" aria-live="off"></div>
+
+    <!-- Controles superiores -->
+    <div class="lf-cinema-controls" aria-label="Controles do cinema">
+      <button class="lf-cinema-ctrl-btn" id="lf-cinema-close" type="button" aria-label="Fechar modo cinema">✕</button>
+      <span class="lf-cinema-logotype" aria-hidden="true">LOVEFLIX</span>
+      <button class="lf-cinema-ctrl-btn" id="lf-cinema-music-btn" type="button" aria-label="Liga ou desliga música">🔇</button>
+    </div>
+
+    <!-- Caption da foto atual -->
+    <div class="lf-cinema-caption" id="lf-cinema-caption" aria-live="polite">
+      <h3 class="lf-cinema-caption-title" id="lf-cinema-caption-title"></h3>
+      <p  class="lf-cinema-caption-label" id="lf-cinema-caption-label"></p>
+    </div>
+
+    <!-- Dots de progresso -->
+    <div class="lf-cinema-dots" id="lf-cinema-dots" role="tablist" aria-label="Fotos do slideshow"></div>
+
+    <!-- Iframe de áudio (YouTube) -->
+    <iframe
+      class="lf-cinema-iframe"
+      id="lf-cinema-audio"
+      src=""
+      allow="autoplay; encrypted-media"
+      tabindex="-1"
+      aria-hidden="true"
+      title="Música de fundo"
+    ></iframe>
+
+  </div>
+  <!-- /MODO CINEMA -->
+
+  <!-- Scripts -->
+  <script src="couple/couple.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/cinema.js"></script>
+  <script src="js/share.js"></script>
+
+</body>
+</html>

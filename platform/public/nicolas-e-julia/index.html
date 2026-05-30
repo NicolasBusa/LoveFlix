@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="LoveFlix — Sua surpresa romântica especial">
+  <meta name="theme-color" content="#141414">
+  <title>LoveFlix — Quem está assistindo?</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+  <main class="profile-page" id="profile-page">
+
+    <!-- Fundo: foto do casal -->
+    <div class="profile-bg" aria-hidden="true">
+      <img id="profile-bg-img" src="" alt="">
+    </div>
+
+    <!-- Logo -->
+    <span class="profile-logo" aria-label="LoveFlix">LOVEFLIX</span>
+
+    <!-- Container central -->
+    <div class="profile-container">
+      <h1 class="profile-heading">Quem está assistindo?</h1>
+
+      <div class="profile-grid" role="list">
+        <!-- Card do casal — gerado via JS -->
+        <button
+          class="profile-card"
+          id="profile-couple-btn"
+          role="listitem"
+          aria-label="Entrar como o casal"
+          type="button"
+        >
+          <div class="profile-avatar">
+            <img id="profile-couple-img" src="" alt="">
+          </div>
+          <span class="profile-name" id="profile-couple-name"></span>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="couple/couple.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cfg = COUPLE_CONFIG;
+
+      // Popula a tela com os dados do casal
+      document.getElementById('profile-bg-img').src       = cfg.photos.hero;
+      document.getElementById('profile-bg-img').alt       = cfg.coupleTitle;
+      document.getElementById('profile-couple-img').src   = cfg.photos.profile;
+      document.getElementById('profile-couple-img').alt   = cfg.coupleTitle;
+      document.getElementById('profile-couple-name').textContent = cfg.coupleTitle;
+
+      // Ao clicar no perfil → vai para o login
+      document.getElementById('profile-couple-btn')
+        .addEventListener('click', () => {
+          window.location.href = 'login.html';
+        });
+    });
+  </script>
+
+</body>
+</html>

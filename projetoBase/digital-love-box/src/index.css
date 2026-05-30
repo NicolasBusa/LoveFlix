@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Nunito:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Editorial Canvas Light */
+    --background: 40 40% 96%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Deep Bordeaux / Wine Red */
+    --primary: 347 50% 30%;
+    --primary-foreground: 40 40% 96%;
+
+    /* Stark Contrast Element / Charcoal */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 40 40% 96%;
+
+    --muted: 40 20% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 347 50% 30%;
+    --accent-foreground: 40 40% 96%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 10%; /* Solid sharp borders */
+    --input: 0 0% 10%;
+    --ring: 347 50% 30%;
+
+    /* Zero Radius for Brutalist Vibe */
+    --radius: 0px;
+
+    /* Textures */
+    --cream: 40 40% 96%;
+  }
+
+  /* Optional Dark Mode (Ink and Wine) */
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 40 30% 92%;
+    --card: 0 0% 12%;
+    --card-foreground: 40 30% 92%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 40 30% 92%;
+    --primary: 347 60% 45%;
+    --primary-foreground: 0 0% 8%;
+    --secondary: 40 30% 92%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 40 10% 60%;
+    --accent: 347 60% 45%;
+    --accent-foreground: 40 30% 92%;
+    --border: 40 30% 92%;
+    --input: 40 30% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Instrument Serif', serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-handwritten {
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* No more blur, strictly solid & raw */
+  .editorial-panel {
+    @apply bg-background border-2 border-foreground shadow-[4px_4px_0_hsl(var(--foreground))] transition-transform;
+  }
+
+  .editorial-panel:hover {
+    @apply translate-x-[-2px] translate-y-[-2px] shadow-[6px_6px_0_hsl(var(--foreground))];
+  }
+
+  /* Intense typographic contrasts */
+  .text-title-xl {
+    @apply font-serif text-6xl md:text-8xl leading-none tracking-tighter uppercase;
+  }
+  
+  .text-wine {
+    @apply text-primary;
+  }
+
+  /* Authentic tactile paper, no "digital dots" */
+  .paper-texture {
+    background-color: hsl(var(--background));
+    background-image: 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .polaroid-raw {
+    @apply bg-card p-2 md:p-4 pb-12 md:pb-16 border-2 border-foreground object-cover;
+    box-shadow: 6px 6px 0 hsl(var(--foreground));
+  }
+
+  /* Pin but without the 3d glow - stark black dot */
+  .pin-raw {
+    @apply w-3 h-3 rounded-none bg-foreground absolute shadow-none;
+  }
+}

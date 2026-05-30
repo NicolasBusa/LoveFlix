@@ -1,0 +1,14 @@
+# Executables and large binaries
+/stripe.exe
+
+# Local environment files
+.env*.local
+
+# Node and build outputs (global fallback)
+node_modules/
+.next/
+dist/
+
+# OS/System files
+.DS_Store
+Thumbs.db
